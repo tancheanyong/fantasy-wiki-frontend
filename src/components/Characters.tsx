@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 function Characters() {
-  const [characters, setCharacters] = useState([]);
+  const [characters, setCharacters] = useState<string[]>([]);
 
   useEffect(() => {
     fetch('http://localhost:8000/characters')
       .then((res) => res.json())
-      .then((json) => setCharacters(json));
+      .then((data) => setCharacters(data));
   }, []);
 
   return (
