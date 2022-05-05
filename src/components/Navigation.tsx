@@ -1,18 +1,28 @@
 import { Router, Routes, Link } from 'react-router-dom';
+import './navigation.scss';
 
 function Navigation() {
   return (
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/characters">Characters</Link>
-      </li>
-      <li>
-        <Link to="/worldbuilding">Worldbuilding</Link>
-      </li>
-    </ul>
+    <div className="header">
+      <h1 className="header-title">FANTASY WIKI</h1>
+      <ul className="navbar">
+        <li>
+          <Link to="/" className="navlink">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/characters" className="navlink">
+            Characters
+          </Link>
+        </li>
+        <li>
+          <Link to="/worldbuilding" className="navlink">
+            Worldbuilding
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 }
 

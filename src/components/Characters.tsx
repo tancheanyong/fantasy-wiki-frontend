@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import './characters.scss';
 
 function Characters() {
   const [characters, setCharacters] = useState<string[]>([]);
@@ -10,11 +12,13 @@ function Characters() {
   }, []);
 
   return (
-    <div>
+    <div className="char-page">
       <h2>Characters List</h2>
       <ul>
         {characters.map((character) => (
-          <li key={Math.random()}>{character}</li>
+          <li key={Math.random()}>
+            <Link to={`/characters/${character}`}>{character}</Link>
+          </li>
         ))}
       </ul>
     </div>
