@@ -30,6 +30,7 @@ function Characters() {
           </li>
         ))}
       </ul>
+      <Link to={'/characters/character-creation'}>Add a new character!</Link>
     </div>
   );
 }
