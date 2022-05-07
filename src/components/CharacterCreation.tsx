@@ -4,6 +4,15 @@ function CharacterCreation() {
   const [name, setName] = useState<string>('');
   const [age, setAge] = useState<string>('');
   const [description, setDescription] = useState<string>('');
+  const [status, setStatus] = useState<string>('');
+
+  const handleStatus = (statusText: string) => {
+    if (statusText === 'Saved') {
+      setStatus(`${name} Saved!`);
+    } else {
+      setStatus('Character already exist!');
+    }
+  };
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -15,7 +24,7 @@ function CharacterCreation() {
       body: JSON.stringify({ name, age, description }),
     })
       .then((res) => res.text())
-      .then((data: string) => console.log('result: ', data));
+      .then((statusText: string) => handleStatus(statusText));
   };
 
   return (
@@ -52,6 +61,7 @@ function CharacterCreation() {
           Submit
         </button>
       </form>
+      <p>{status}</p>
     </div>
   );
 }
