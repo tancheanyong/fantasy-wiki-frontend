@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function CharacterCreation() {
   const [name, setName] = useState('');
   const [age, setAge] = useState('');
-  const [desc, setDesc] = useState('');
+  const [description, setDescription] = useState('');
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -12,12 +12,10 @@ function CharacterCreation() {
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({ name, age, desc }),
+      body: JSON.stringify({ name, age, description }),
     })
-      .then((response) => response.json())
-      .then((result) => {
-        console.log('result: ', result);
-      });
+      .then((res) => res.json())
+      .then((data) => console.log('result: ', data.response));
   };
 
   return (
@@ -46,8 +44,8 @@ function CharacterCreation() {
           <label htmlFor="desc">Description: </label>
           <textarea
             name="desc"
-            onChange={(e) => setDesc(e.target.value)}
-            value={desc}
+            onChange={(e) => setDescription(e.target.value)}
+            value={description}
           ></textarea>
         </div>
         <button className="submit-btn" type="submit">
