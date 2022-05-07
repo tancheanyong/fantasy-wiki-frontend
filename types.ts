@@ -9,3 +9,8 @@ export interface characterInfo {
   age: Number;
   description: string;
 }
+
+export interface deleteObject {
+  acknowledged: Boolean;
+  deletedCount: Number;
+}
