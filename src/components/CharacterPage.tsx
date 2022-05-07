@@ -11,11 +11,14 @@ function CharacterPage() {
     fetch(`http://localhost:8000/characters/${name}`)
       .then((res) => res.json())
       .then((data: characterInfo) => setCharacterInfo(data));
-  });
+  }, []);
 
   return (
     <div>
-      CharacterPage <div>{characterInfo?.description}</div>
+      <h2>CharacterPage</h2>
+      <div>Name: {characterInfo?.name}</div>
+      <div>age: {characterInfo?.age.toString()}</div>
+      <div>Description: {characterInfo?.description}</div>
     </div>
   );
 }
