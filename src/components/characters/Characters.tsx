@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
-import './characters.scss';
-import { characterNames } from '../../types';
+import './scss/characters.scss';
+import { characterNames } from '../../../types';
 
 function Characters() {
   const [characterNames, setCharacterNames] = useState<string[]>([]);

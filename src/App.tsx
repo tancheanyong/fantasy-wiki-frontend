@@ -7,11 +7,11 @@ import {
 } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import './App.scss';
-import Characters from './components/Characters';
+import Characters from './components/characters/Characters';
 import Worldbuilding from './components/Worldbuilding';
 import Home from './components/Home';
-import CharacterPage from './components/CharacterPage';
-import CharacterCreation from './components/CharacterCreation';
+import CharacterPage from './components/characters/CharacterPage';
+import CharacterCreation from './components/characters/CharacterCreation';
 
 function App() {
   return (

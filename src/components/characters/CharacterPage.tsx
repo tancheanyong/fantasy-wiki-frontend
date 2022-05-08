@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { characterInfo, deleteObject } from '../../types';
+import { characterInfo, deleteObject } from '../../../types';
 
 function CharacterPage() {
   const params = useParams();
