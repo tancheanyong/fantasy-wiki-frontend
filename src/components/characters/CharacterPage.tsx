@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { characterInfo, deleteObject } from '../../../types';
 
 function CharacterPage() {
@@ -7,12 +7,19 @@ function CharacterPage() {
   const { name } = params;
   const [characterInfo, setCharacterInfo] = useState<characterInfo>();
   const [deleteStatus, setDeleteStatus] = useState<string>();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:8000/characters/${name}`)
       .then((res) => res.json())
       .then((data: characterInfo) => setCharacterInfo(data));
   }, []);
+
+  const handleNavigation = () => {
+    setTimeout(() => {
+      navigate('/characters');
+    }, 2000);
+  };
 
   const deleteCharacter = () => {
     fetch(`http://localhost:8000/characters/${name}`, {
@@ -29,7 +36,8 @@ function CharacterPage() {
         } else {
           setDeleteStatus(`${characterInfo?.name} has already been deleted`);
         }
-      });
+      })
+      .then(() => handleNavigation());
   };
 
   return (
