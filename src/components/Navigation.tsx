@@ -21,6 +21,11 @@ function Navigation() {
             Worldbuilding
           </Link>
         </li>
+        <li>
+          <Link to="/storyboard" className="navlink">
+            Story Board
+          </Link>
+        </li>
       </ul>
     </div>
   );

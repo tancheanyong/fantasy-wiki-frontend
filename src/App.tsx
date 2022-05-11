@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Link,
-  useSearchParams,
-} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
 import './App.scss';
 import Characters from './components/characters/Characters';
@@ -12,6 +6,7 @@ import Worldbuilding from './components/Worldbuilding';
 import Home from './components/Home';
 import CharacterPage from './components/characters/CharacterPage';
 import CharacterCreation from './components/characters/CharacterCreation';
+import StoryBoard from './components/storyBoard/StoryBoard';
 
 function App() {
   return (
@@ -27,6 +22,7 @@ function App() {
           />
           <Route path="/characters/:name" element={<CharacterPage />} />
           <Route path="/worldbuilding" element={<Worldbuilding />} />
+          <Route path="/storyboard" element={<StoryBoard />} />
         </Routes>
       </BrowserRouter>
     </div>
