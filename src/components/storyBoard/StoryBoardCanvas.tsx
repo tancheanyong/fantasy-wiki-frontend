@@ -10,7 +10,7 @@ import ReactFlow, {
   OnLoadParams,
 } from 'react-flow-renderer';
 
-function FlowCanvas() {
+function StoryBoardCanvas() {
   const initialElements = [
     {
       id: '1',
@@ -88,8 +88,10 @@ function FlowCanvas() {
       deleteKeyCode={46}
       onConnect={onConnect}
       onDragOver={onDragOver}
-    />
+    >
+      <MiniMap />
+    </ReactFlow>
   );
 }
 
-export default FlowCanvas;
+export default StoryBoardCanvas;
