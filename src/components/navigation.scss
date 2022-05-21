@@ -1,21 +1,21 @@
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #bb893e;
-    height: 5rem;
-    .header-title{
-        padding: 0 2rem;
-    }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #bb893e;
+  height: 76px;
+  .header-title {
+    padding: 0 2rem;
+  }
 }
 
-.navbar{
-    display: flex;
-    list-style: none;
-    padding: 0 1rem;
-    .navlink{
-        text-decoration: none;
+.navbar {
+  display: flex;
+  list-style: none;
+  padding: 0 1rem;
+  .navlink {
+    text-decoration: none;
     color: black;
-        padding: 0 1rem;
-    }
+    padding: 0 1rem;
+  }
 }

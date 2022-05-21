@@ -1,13 +1,15 @@
-import FlowCanvas from './FlowCanvas';
-import SidePanel from './SidePanel';
+import { Card, Elevation, Button } from '@blueprintjs/core';
+import StoryBoardCanvas from './StoryBoardCanvas';
+import StoryBoardSidePanel from './StoryBoardSidePanel/StoryBoardSidePanel';
+import './StoryBoard.scss';
 
 function StoryBoard() {
   return (
-    <div>
-      <FlowCanvas />
-      <div>
-        <SidePanel />
-      </div>
+    <div className="story-board">
+      <StoryBoardCanvas />
+      <Card elevation={Elevation.THREE} className="story-board__side-panel">
+        <StoryBoardSidePanel />
+      </Card>
     </div>
   );
 }

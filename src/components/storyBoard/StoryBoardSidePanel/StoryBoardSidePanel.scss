@@ -1,0 +1,24 @@
+@import '../../../ColorPalette.scss';
+
+.side-panel__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .side-panel__header {
+    font-size: 20px;
+    margin: 6px;
+  }
+  .characters-section__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 6px;
+    margin-top: 6px;
+    .character-section__item {
+      text-align: center;
+      .character-section__item-text {
+        margin: 0;
+      }
+    }
+  }
+}
