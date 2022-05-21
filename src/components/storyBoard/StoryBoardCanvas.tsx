@@ -88,6 +88,7 @@ function StoryBoardCanvas() {
       deleteKeyCode={46}
       onConnect={onConnect}
       onDragOver={onDragOver}
+      snapToGrid={true}
     >
       <MiniMap />
     </ReactFlow>

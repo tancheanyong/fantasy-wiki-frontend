@@ -1,4 +1,4 @@
-import { Icon } from '@blueprintjs/core';
+import { Card, Icon, IconSize } from '@blueprintjs/core';
 import './StoryBoardSidePanel.scss';
 
 function StoryBoardSidePanel() {
@@ -16,8 +16,16 @@ function StoryBoardSidePanel() {
       <p className="side-panel__header">Characters</p>
       <div className="characters-section__container">
         {tempCharacters.map((character) => (
-          <div className="character-section__item" key={character.id}>
-            <Icon icon={'person'} className="character-section__item-icon" />
+          <div
+            className="character-section__item"
+            key={character.id}
+            draggable={true}
+          >
+            <Icon
+              icon={'person'}
+              size={IconSize.LARGE}
+              className="character-section__item-icon"
+            />
             <p className="character-section__item-text">{character.name}</p>
           </div>
         ))}
