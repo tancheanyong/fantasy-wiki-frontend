@@ -9,16 +9,21 @@ import ReactFlow, {
   Connection,
   OnLoadParams,
 } from 'react-flow-renderer';
+import EventNodes from './Nodes/EventNodes';
 
 function StoryBoardCanvas() {
   const initialElements = [
     {
-      id: 'init',
-      type: 'input',
-      data: { label: 'Input Node' },
+      id: 'firstEvent',
+      type: 'event',
+      data: { label: 'First Event' },
       position: { x: 500, y: 150 },
     },
   ];
+
+  const nodeTypes = {
+    event: EventNodes,
+  };
 
   const flowStyles = { width: '100%', height: '500px' };
 

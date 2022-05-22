@@ -1,5 +1,5 @@
 import { Card, Elevation, Button } from '@blueprintjs/core';
-import StoryBoardCanvas from './StoryBoardCanvas';
+import StoryBoardCanvas from './StoryBoardCanvas/StoryBoardCanvas';
 import StoryBoardSidePanel from './StoryBoardSidePanel/StoryBoardSidePanel';
 import './StoryBoard.scss';
 
