@@ -16,7 +16,7 @@ function StoryBoardSidePanel() {
       <p className="side-panel__header">Characters</p>
       <div className="characters-section__container">
         {tempCharacters.map((character) => (
-          <CharacterSectionItem character={character} />
+          <CharacterSectionItem character={character} key={character.id} />
         ))}
       </div>
     </div>
