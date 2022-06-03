@@ -4,19 +4,20 @@
   height: 100% !important;
 }
 .story-board {
+  display: flex;
   position: relative;
   background-color: $light-brown4;
   height: calc(100% - 76px);
 }
-.story-board__side-panel {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  height: 70%;
-  width: 200px;
-  padding: 6px;
-  border: 2px solid $light-brown1;
-  border-radius: 10px;
-  background-color: $light-brown3;
-  z-index: 19;
-}
+// .story-board__side-panel {
+//   position: absolute;
+//   right: 10px;
+//   top: 10px;
+//   height: 70%;
+//   width: 200px;
+//   padding: 6px;
+//   border: 2px solid $light-brown1;
+//   border-radius: 10px;
+//   background-color: $light-brown3;
+//   z-index: 19;
+// }
