@@ -1,4 +1,4 @@
-.header {
+.page-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -7,15 +7,15 @@
   .header-title {
     padding: 0 2rem;
   }
-}
 
-.navbar {
-  display: flex;
-  list-style: none;
-  padding: 0 1rem;
-  .navlink {
-    text-decoration: none;
-    color: black;
+  .navbar {
+    display: flex;
+    list-style: none;
     padding: 0 1rem;
+    .navlink {
+      text-decoration: none;
+      color: black;
+      padding: 0 1rem;
+    }
   }
 }

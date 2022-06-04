@@ -1,9 +1,9 @@
 import { Router, Routes, Link } from 'react-router-dom';
-import './navigation.scss';
+import './PageHeader.scss';
 
-function Navigation() {
+function PageHeader() {
   return (
-    <div className="header">
+    <div className="page-header">
       <h1 className="header-title">FANTASY WIKI</h1>
       <ul className="navbar">
         <li>
@@ -31,4 +31,4 @@ function Navigation() {
   );
 }
 
-export default Navigation;
+export default PageHeader;
