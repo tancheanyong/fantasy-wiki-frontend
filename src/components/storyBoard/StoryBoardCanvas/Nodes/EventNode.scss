@@ -1,0 +1,14 @@
+@import '~@blueprintjs/core/lib/scss/variables';
+@import '../../../../ColorPalette.scss';
+
+.event-node {
+  width: 150px;
+  background-color: $gold3;
+  border: 1px solid $dark-brown3;
+  background-color: $light-brown2;
+  border-radius: 6px;
+  padding: 6px;
+  .header {
+    text-align: center;
+  }
+}

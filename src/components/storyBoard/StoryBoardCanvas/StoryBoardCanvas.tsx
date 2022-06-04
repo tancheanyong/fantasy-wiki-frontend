@@ -9,7 +9,7 @@ import ReactFlow, {
   Connection,
   OnLoadParams,
 } from 'react-flow-renderer';
-import EventNodes from './Nodes/EventNodes';
+import EventNode from './Nodes/EventNode';
 import './StoryBoardCanvas.scss';
 
 function StoryBoardCanvas() {
@@ -23,7 +23,7 @@ function StoryBoardCanvas() {
   ];
 
   const nodeTypes = {
-    event: EventNodes,
+    event: EventNode,
   };
 
   const flowStyles = { width: '100%', height: '500px' };
@@ -81,6 +81,7 @@ function StoryBoardCanvas() {
       onDragOver={onDragOver}
       snapToGrid={true}
       onDrop={onDrop}
+      defaultZoom={0.5}
     >
       <MiniMap />
     </ReactFlow>
