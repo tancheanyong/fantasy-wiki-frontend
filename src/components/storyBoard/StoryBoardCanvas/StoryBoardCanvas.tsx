@@ -10,6 +10,7 @@ import ReactFlow, {
   OnLoadParams,
 } from 'react-flow-renderer';
 import EventNodes from './Nodes/EventNodes';
+import './StoryBoardCanvas.scss';
 
 function StoryBoardCanvas() {
   const initialElements = [

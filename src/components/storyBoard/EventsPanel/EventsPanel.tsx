@@ -1,7 +1,15 @@
-import React from 'react';
+import { Card } from '@blueprintjs/core';
+import EventCard from './EventCard';
+import './EventsPanel.scss';
 
 const EventsPanel = () => {
-  return <div>EventsPanel</div>;
+  return (
+    <div className="events-panel">
+      <EventCard />
+      <EventCard />
+      <EventCard />
+    </div>
+  );
 };
 
 export default EventsPanel;

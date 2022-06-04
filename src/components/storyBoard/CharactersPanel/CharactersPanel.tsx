@@ -1,7 +1,7 @@
-import React from 'react';
+import './CharactersPanel.scss';
 
 const CharactersPanel = () => {
-  return <div>CharactersPanel</div>;
+  return <div className="characters-panel">CharactersPanel</div>;
 };
 
 export default CharactersPanel;

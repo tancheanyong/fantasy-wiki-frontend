@@ -1,1 +1,13 @@
 @import '~@blueprintjs/core/lib/scss/variables';
+@import '../../../ColorPalette.scss';
+
+.events-panel {
+  flex: 2;
+  max-width: 260px;
+  border-right: 2px solid $orange1;
+  background-color: $dark-brown5;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
