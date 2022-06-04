@@ -1,6 +1,6 @@
 import { Card, Icon, IconSize } from '@blueprintjs/core';
 import { FunctionComponent } from 'react';
-import { EventCardInfo } from '../../../types';
+import { EventCardInfo } from '../../../../types';
 import './EventCard.scss';
 
 type EventCardProps = {

@@ -14,3 +14,9 @@ export interface deleteObject {
   acknowledged: Boolean;
   deletedCount: Number;
 }
+
+export type EventCardInfo = {
+  id: string;
+  title: string;
+  characters: Array<any>;
+};
