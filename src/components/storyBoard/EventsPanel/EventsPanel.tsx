@@ -5,6 +5,7 @@ import './EventsPanel.scss';
 const EventsPanel = () => {
   return (
     <div className="events-panel">
+      <p className="header">Events Backlog</p>
       <div className="cards-roster">
         <EventCard />
         <EventCard />

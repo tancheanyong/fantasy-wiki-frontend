@@ -3,7 +3,7 @@
 
 .events-panel {
   flex: 2;
-  max-width: 260px;
+  max-width: 220px;
   border-right: 2px solid $orange1;
   background-color: $dark-brown5;
   padding: 12px;
@@ -12,6 +12,15 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
+  .header {
+    background-color: transparent;
+    width: 100%;
+    // padding: 12px;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    margin: 6px;
+  }
   .cards-roster {
     display: flex;
     flex-direction: column;
