@@ -2,6 +2,9 @@
 @import '../../../ColorPalette.scss';
 
 .event-card {
+  width: 100%;
+  border: 1px solid $dark-brown3;
+  background-color: $light-brown3;
   border-radius: 6px;
   padding: 6px;
 }
