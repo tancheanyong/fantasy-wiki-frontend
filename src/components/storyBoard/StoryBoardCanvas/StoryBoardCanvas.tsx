@@ -53,7 +53,7 @@ function StoryBoardCanvas() {
       });
       const newNode: any = {
         id,
-        type: 'default',
+        type: 'event',
         position,
         data: { id, label: name },
       };
@@ -72,6 +72,7 @@ function StoryBoardCanvas() {
   return (
     <ReactFlow
       elements={elements}
+      nodeTypes={nodeTypes}
       style={flowStyles}
       onLoad={onLoad}
       onElementsRemove={onElementsRemove}

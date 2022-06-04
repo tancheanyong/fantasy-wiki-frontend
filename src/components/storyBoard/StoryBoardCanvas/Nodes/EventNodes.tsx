@@ -1,7 +1,14 @@
 import React from 'react';
+import { FunctionComponent } from 'react';
 
-const EventNodes = () => {
-  return <div>EventNodes</div>;
+type EventNodesProps = {
+  data: {
+    label: string;
+  };
+};
+
+const EventNodes: FunctionComponent<EventNodesProps> = ({ data }) => {
+  return <div>{data.label}</div>;
 };
 
 export default EventNodes;
