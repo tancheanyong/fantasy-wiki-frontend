@@ -33,7 +33,7 @@ function StoryBoardCanvas() {
 
   const onLoad = (reactFlowInstance: OnLoadParams) => {
     setRfInstance(reactFlowInstance);
-    reactFlowInstance.fitView();
+    reactFlowInstance.setTransform({ x: 100, y: 50, zoom: 1 });
   };
   const onDragOver = (event: DragEvent) => {
     event.preventDefault();
@@ -81,7 +81,6 @@ function StoryBoardCanvas() {
       onDragOver={onDragOver}
       snapToGrid={true}
       onDrop={onDrop}
-      defaultZoom={0.5}
     >
       <MiniMap />
     </ReactFlow>
