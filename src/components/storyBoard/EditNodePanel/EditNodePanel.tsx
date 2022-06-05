@@ -8,10 +8,14 @@ type EditNodeForm = {
 };
 
 const EditNodePanel = () => {
-  const handleFormSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { title, desc } = e.target as typeof e.target & EditNodeForm;
     console.log(title.value);
+
+    await fetch('http://localhost:8000/storyboard/edit-node', {
+      method: 'PUT',
+    });
   };
   return (
     <div className="edit-node-panel">
