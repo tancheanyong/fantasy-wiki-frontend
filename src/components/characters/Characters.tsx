@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import './scss/characters.scss';
-import { characterNames } from '../../../types';
+import { characterNames } from '../../types';
 import CharacterCard from './CharacterCard';
 
 function Characters() {
