@@ -11,6 +11,7 @@ import ReactFlow, {
 } from 'react-flow-renderer';
 import EventNode from './Nodes/EventNode';
 import './StoryBoardCanvas.scss';
+import nextId from 'react-id-generator';
 
 function StoryBoardCanvas() {
   const initialElements = [
@@ -46,15 +47,16 @@ function StoryBoardCanvas() {
 
     if (rfInstance) {
       const id = event.dataTransfer.getData('eventCardId');
+      const nodeId = `node_${nextId()}`;
       const position = rfInstance.project({
         x: event.clientX,
         y: event.clientY,
       });
       const newNode: any = {
-        id,
+        id: nodeId,
         type: 'event',
         position,
-        data: { id, label: id },
+        data: { label: nodeId },
       };
 
       setElements((es) => es.concat(newNode));
