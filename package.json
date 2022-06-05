@@ -24,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "resolutions": {
-    "@types/react": "18.0.8"
+    "@types/react": "17.0.37"
   },
   "scripts": {
     "start": "react-scripts start",
