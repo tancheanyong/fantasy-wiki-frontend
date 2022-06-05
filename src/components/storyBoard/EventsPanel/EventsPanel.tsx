@@ -1,5 +1,5 @@
 import { Button, Card, Icon, IconSize } from '@blueprintjs/core';
-import { useState } from 'react';
+import { DragEvent, useState } from 'react';
 import EventCard from './EventCard';
 import './EventsPanel.scss';
 import nextId from 'react-id-generator';

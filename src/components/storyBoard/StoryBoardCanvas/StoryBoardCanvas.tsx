@@ -45,8 +45,7 @@ function StoryBoardCanvas() {
     event.preventDefault();
 
     if (rfInstance) {
-      const id = event.dataTransfer.getData('characterId');
-      const name = event.dataTransfer.getData('characterName');
+      const id = event.dataTransfer.getData('eventCardId');
       const position = rfInstance.project({
         x: event.clientX,
         y: event.clientY,
@@ -55,7 +54,7 @@ function StoryBoardCanvas() {
         id,
         type: 'event',
         position,
-        data: { id, label: name },
+        data: { id, label: id },
       };
 
       setElements((es) => es.concat(newNode));
