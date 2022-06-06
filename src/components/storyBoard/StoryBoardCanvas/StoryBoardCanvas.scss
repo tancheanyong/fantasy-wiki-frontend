@@ -1,4 +1,14 @@
 .react-flow {
   height: 100% !important;
   flex: 10;
+  .react-flow__minimap {
+    bottom: 30px;
+  }
+  .save-btn {
+    position: absolute;
+    bottom: 0;
+    right: 10px;
+    width: 200px;
+    z-index: 22;
+  }
 }
