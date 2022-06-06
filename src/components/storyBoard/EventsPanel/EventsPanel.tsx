@@ -3,7 +3,7 @@ import { DragEvent, useState } from 'react';
 import EventCard from './EventCard';
 import './EventsPanel.scss';
 import nextId from 'react-id-generator';
-import { EventCardInfo } from '../../../../types';
+import { EventCardInfo } from '../../../types';
 
 const EventsPanel = () => {
   const [eventCardInfos, setEventCardInfos] = useState<Array<EventCardInfo>>([

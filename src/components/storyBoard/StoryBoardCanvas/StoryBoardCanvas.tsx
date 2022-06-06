@@ -1,4 +1,4 @@
-import { useState, DragEvent } from 'react';
+import { useState, DragEvent, MouseEvent } from 'react';
 import ReactFlow, {
   Elements,
   Controls,
@@ -8,10 +8,12 @@ import ReactFlow, {
   Edge,
   Connection,
   OnLoadParams,
+  Node,
 } from 'react-flow-renderer';
 import EventNode from './Nodes/EventNode';
 import './StoryBoardCanvas.scss';
 import nextId from 'react-id-generator';
+import { Button } from '@blueprintjs/core';
 
 function StoryBoardCanvas() {
   const initialElements = [
@@ -69,6 +71,18 @@ function StoryBoardCanvas() {
   const onConnect = (params: Edge | Connection) => {
     setElements((els) => addEdge(params, els));
   };
+  const onNodeDragStop = (e: MouseEvent, node: Node) => {
+    console.log(node);
+  };
+  const handleSaveStoryboard = async (e: MouseEvent) => {
+    await fetch('http://localhost:8000/storyboard/save', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify(elements),
+    });
+  };
 
   return (
     <ReactFlow
@@ -82,8 +96,12 @@ function StoryBoardCanvas() {
       onDragOver={onDragOver}
       snapToGrid={true}
       onDrop={onDrop}
+      onNodeDragStop={onNodeDragStop}
     >
       <MiniMap />
+      <Button className="save-btn" type="button" onClick={handleSaveStoryboard}>
+        SaveStoryBoardBtn
+      </Button>
     </ReactFlow>
   );
 }
