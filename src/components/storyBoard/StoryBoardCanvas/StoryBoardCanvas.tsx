@@ -14,6 +14,7 @@ import EventNode from './Nodes/EventNode';
 import './StoryBoardCanvas.scss';
 import nextId from 'react-id-generator';
 import { Button } from '@blueprintjs/core';
+import { EventCardInfo } from '../../../types';
 
 function StoryBoardCanvas() {
   const initialElements = [
@@ -72,7 +73,15 @@ function StoryBoardCanvas() {
     setElements((els) => addEdge(params, els));
   };
   const onNodeDragStop = (e: MouseEvent, node: Node) => {
-    console.log(node);
+    setElements((elements: any) => {
+      return elements.map((el: EventCardInfo) => {
+        if (el.id === node.id) {
+          return { ...el, position: node.position };
+        } else {
+          return el;
+        }
+      });
+    });
   };
   const handleSaveStoryboard = async (e: MouseEvent) => {
     await fetch('http://localhost:8000/storyboard/save', {
