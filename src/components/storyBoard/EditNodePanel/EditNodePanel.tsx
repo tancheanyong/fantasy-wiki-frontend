@@ -1,5 +1,5 @@
 import { Button } from '@blueprintjs/core';
-import React, { FormEvent, FormEventHandler } from 'react';
+import React, { FormEvent, FormEventHandler, useState } from 'react';
 import './EditNodePanel.scss';
 
 type EditNodeForm = {
@@ -8,15 +8,17 @@ type EditNodeForm = {
 };
 
 const EditNodePanel = () => {
+  const [formData, setFormData] = useState({});
+
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { title, desc } = e.target as typeof e.target & EditNodeForm;
-    console.log(title.value);
+    console.log(formData);
 
     await fetch('http://localhost:8000/storyboard/edit-node', {
       method: 'PUT',
     });
   };
+
   return (
     <div className="edit-node-panel">
       <p className="header">EditNodePanel</p>
@@ -25,13 +27,31 @@ const EditNodePanel = () => {
           <label htmlFor="title-input" className="label">
             Title:
           </label>
-          <input name="title" type="text" className="input" />
+          <input
+            name="title"
+            type="text"
+            className="input"
+            onChange={(e) =>
+              setFormData((prev) => {
+                return { ...prev, title: e.target.value };
+              })
+            }
+          />
         </fieldset>
         <fieldset className="input-group">
           <label htmlFor="desc-input" className="label">
             Description:
           </label>
-          <input name="desc" type="text" className="input" />
+          <input
+            name="desc"
+            type="text"
+            className="input"
+            onChange={(e) =>
+              setFormData((prev) => {
+                return { ...prev, desc: e.target.value };
+              })
+            }
+          />
         </fieldset>
         <div className="characters-panel">characters</div>
       </form>
