@@ -1,8 +1,17 @@
 @import '../../ColorPalette.scss';
+@import '~@blueprintjs/core/lib/scss/variables';
 
 .story-board {
   display: flex;
   position: relative;
   background-color: $light-brown4;
   height: calc(100% - 76px);
+  .right-panel {
+    flex: 2;
+    max-width: 220px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid $orange1;
+  }
 }

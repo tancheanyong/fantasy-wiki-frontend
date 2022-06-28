@@ -2,18 +2,17 @@
 @import '../../../ColorPalette.scss';
 
 .characters-panel {
-  flex: 2;
-  max-width: 220px;
-  height: 100%;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-left: 2px solid $orange1;
   background-color: $dark-brown5;
   padding: 12px;
-  .side-panel__header {
+  .characters__header {
     font-size: 20px;
     margin: 6px;
+    text-align: center;
+    border-bottom: 1px solid $orange1;
   }
   .characters-section__container {
     width: 100%;
