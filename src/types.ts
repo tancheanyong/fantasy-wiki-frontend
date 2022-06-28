@@ -1,4 +1,4 @@
-export interface characterNames {
+export interface CharacterNames {
   _id: string;
   name: string;
 }
@@ -25,7 +25,7 @@ export interface CharacterWikiType {
   optionalSections?: {};
 }
 
-export interface deleteObject {
+export interface DeleteObject {
   acknowledged: Boolean;
   deletedCount: Number;
 }

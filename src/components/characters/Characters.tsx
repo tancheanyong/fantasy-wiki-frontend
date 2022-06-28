@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import './scss/characters.scss';
-import { characterNames } from '../../types';
+import { CharacterInfo, CharacterNames } from '../../types';
 import CharacterCard from './CharacterCard';
 
 function Characters() {
@@ -11,7 +11,7 @@ function Characters() {
   useEffect(() => {
     fetch('http://localhost:8000/characters')
       .then((res) => res.json())
-      .then((data: Array<characterNames>) => {
+      .then((data: Array<CharacterInfo>) => {
         for (let i = 0; i < data.length; i += 1) {
           setCharacterNames((characterNames) => [
             ...characterNames,

@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { characterInfo, deleteObject } from '../../types';
+import { CharacterInfo, DeleteObject } from '../../types';
 
 function CharacterPage() {
   const params = useParams();
   const { name } = params;
-  const [characterInfo, setCharacterInfo] = useState<characterInfo>();
+  const [characterInfo, setCharacterInfo] = useState<CharacterInfo>();
   const [deleteStatus, setDeleteStatus] = useState<string>();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:8000/characters/${name}`)
       .then((res) => res.json())
-      .then((data: characterInfo) => setCharacterInfo(data));
+      .then((data: CharacterInfo) => setCharacterInfo(data));
   }, []);
 
   const handleNavigation = () => {
@@ -30,7 +30,7 @@ function CharacterPage() {
       body: JSON.stringify({ _id: characterInfo?._id }),
     })
       .then((res) => res.json())
-      .then((result: deleteObject) => {
+      .then((result: DeleteObject) => {
         if (result.deletedCount) {
           setDeleteStatus(`${characterInfo?.name} is successfully deleted.`);
         } else {

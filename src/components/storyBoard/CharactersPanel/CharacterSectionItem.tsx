@@ -1,26 +1,23 @@
 import React, { DragEvent, FunctionComponent } from 'react';
 import { Icon, IconSize } from '@blueprintjs/core';
+import { CharacterInfo } from '../../../types';
 
-type CharacterInfoType = {
-  id: string;
-  name: string;
-};
-type CharacterType = {
-  character: CharacterInfoType;
+type CharacterItemProps = {
+  character: CharacterInfo;
 };
 
-const CharacterSectionItem: FunctionComponent<CharacterType> = ({
+const CharacterSectionItem: FunctionComponent<CharacterItemProps> = ({
   character,
 }) => {
   const onDragStart = (e: DragEvent) => {
-    e.dataTransfer.setData('characterId', character.id);
+    e.dataTransfer.setData('characterId', character._id);
     e.dataTransfer.setData('characterName', character.name);
   };
 
   return (
     <div
       className="character-section__item"
-      key={character.id}
+      key={character._id}
       draggable={true}
       onDragStart={onDragStart}
     >
