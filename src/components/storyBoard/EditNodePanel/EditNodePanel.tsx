@@ -3,12 +3,15 @@ import React, { FormEvent, FormEventHandler, useState } from 'react';
 import './EditNodePanel.scss';
 
 type EditNodeForm = {
-  title: { value: string };
-  desc: { value: string };
+  title: string;
+  desc: string;
 };
 
 const EditNodePanel = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<EditNodeForm>({
+    title: '',
+    desc: '',
+  });
 
   const handleFormSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +24,7 @@ const EditNodePanel = () => {
 
   return (
     <div className="edit-node-panel">
-      <p className="header">EditNodePanel</p>
+      <p className="header">Edit Event</p>
       <form id="form" className="form" onSubmit={handleFormSubmit}>
         <fieldset className="input-group">
           <label htmlFor="title-input" className="label">
