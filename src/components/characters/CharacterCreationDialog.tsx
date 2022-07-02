@@ -1,4 +1,4 @@
-import { Dialog } from '@blueprintjs/core';
+import { Dialog, InputGroup } from '@blueprintjs/core';
 import React, { FunctionComponent } from 'react';
 
 type CharacterCreationDialogProps = {
@@ -11,7 +11,9 @@ const CharacterCreationDialog: FunctionComponent<
 > = ({ dialogOpen, handleDialogOpenClose }) => {
   return (
     <Dialog isOpen={dialogOpen} onClose={() => handleDialogOpenClose(false)}>
-      sa
+      <div className="picture-upload">Upload Picture</div>
+      <InputGroup placeholder="Name" />
+      <InputGroup placeholder="Description" />
     </Dialog>
   );
 };
