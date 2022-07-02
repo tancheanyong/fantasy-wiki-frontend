@@ -3,7 +3,7 @@ export interface characterNames {
   name: string;
 }
 
-export interface characterInfo {
+export interface CharacterInfo {
   _id: string;
   name: string;
   age: Number;
