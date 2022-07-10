@@ -11,13 +11,16 @@ function Characters() {
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
   useEffect(() => {
-    fetch('http://localhost:8000/characters')
-      .then((res) => res.json())
-      .then((data: Array<CharacterInfo>) => {
-        setCharacters(data);
-      })
-      .catch((err) => console.log(err));
-  }, []);
+    // Only fetch when dialog closes, where user has created a new character
+    if (!dialogOpen) {
+      fetch('http://localhost:8000/characters')
+        .then((res) => res.json())
+        .then((data: Array<CharacterInfo>) => {
+          setCharacters(data);
+        })
+        .catch((err) => console.log(err));
+    }
+  }, [dialogOpen]);
 
   const handleDialogOpenClose = (openDialog: boolean) => {
     setDialogOpen(openDialog);

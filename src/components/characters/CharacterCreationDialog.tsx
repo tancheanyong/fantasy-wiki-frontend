@@ -12,18 +12,21 @@ const CharacterCreationDialog: FunctionComponent<
   const [characterInfo, setCharacterInfo] = useState({ name: '', desc: '' });
 
   const handleSubmit = () => {
-    console.log(characterInfo);
-    fetch('http://localhost:8000/characters/character-creation', {
-      method: 'POST',
-      headers: {
-        'Content-type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: characterInfo.name,
-        age: '',
-        description: characterInfo.desc,
-      }),
-    });
+    if (characterInfo.name.length > 0) {
+      fetch('http://localhost:8000/characters/character-creation', {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: characterInfo.name,
+          age: '',
+          description: characterInfo.desc,
+        }),
+      }).then(() => handleDialogOpenClose(false));
+    } else {
+      alert('Character must have a name!');
+    }
   };
 
   return (
