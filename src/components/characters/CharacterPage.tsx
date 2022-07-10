@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { characterInfo, deleteObject } from '../../../types';
+import { CharacterInfo, deleteObject } from '../../../types';
 
 function CharacterPage() {
   const params = useParams();
   const { name } = params;
-  const [characterInfo, setCharacterInfo] = useState<characterInfo>();
+  const [characterInfo, setCharacterInfo] = useState<CharacterInfo>();
   const [deleteStatus, setDeleteStatus] = useState<string>();
   const navigate = useNavigate();
 
   useEffect(() => {
     fetch(`http://localhost:8000/characters/${name}`)
       .then((res) => res.json())
-      .then((data: characterInfo) => setCharacterInfo(data));
+      .then((data: CharacterInfo) => setCharacterInfo(data));
   }, []);
 
   const handleNavigation = () => {
