@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { CharacterInfo, deleteObject } from '../../../types';
+import { CharacterInfo, CharacterWikiType, deleteObject } from '../../../types';
 
 function CharacterWiki() {
   const params = useParams();
   const { id } = params;
-  const [characterInfo, setCharacterInfo] = useState<CharacterInfo>();
+  const [characterInfo, setCharacterInfo] = useState<CharacterWikiType>();
   const [deleteStatus, setDeleteStatus] = useState<string>();
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log(id);
     fetch(`http://localhost:8000/characters/wiki/${id}`)
       .then((res) => res.json())
-      .then((data: CharacterInfo) => setCharacterInfo(data));
+      .then((data: CharacterWikiType) => setCharacterInfo(data));
   }, []);
 
   const handleNavigation = () => {
@@ -28,14 +27,18 @@ function CharacterWiki() {
       headers: {
         'Content-type': 'application/json',
       },
-      body: JSON.stringify({ _id: characterInfo?._id }),
+      body: JSON.stringify({ _id: characterInfo?.characterId }),
     })
       .then((res) => res.json())
       .then((result: deleteObject) => {
         if (result.deletedCount) {
-          setDeleteStatus(`${characterInfo?.name} is successfully deleted.`);
+          setDeleteStatus(
+            `${characterInfo?.characterInfo.name} is successfully deleted.`
+          );
         } else {
-          setDeleteStatus(`${characterInfo?.name} has already been deleted`);
+          setDeleteStatus(
+            `${characterInfo?.characterInfo.name} has already been deleted`
+          );
         }
       })
       .then(() => handleNavigation());
@@ -44,9 +47,9 @@ function CharacterWiki() {
   return (
     <div>
       <h2>CharacterPage</h2>
-      <div>Name: {characterInfo?.name}</div>
-      <div>age: {characterInfo?.age.toString()}</div>
-      <div>Description: {characterInfo?.description}</div>
+      <div>Name: {characterInfo?.characterInfo.name}</div>
+      <div>age: {characterInfo?.characterInfo.age}</div>
+      <div>Description: {characterInfo?.characterInfo.description}</div>
       <div>
         <button onClick={deleteCharacter}>Delete this character</button>
         <button>Edit this character</button>

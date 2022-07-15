@@ -10,6 +10,21 @@ export interface CharacterInfo {
   description: string;
 }
 
+export interface CharacterWikiType {
+  characterId: String;
+  characterInfo: {
+    name: String;
+    age: Number;
+    description: String;
+  };
+  // TODO: Should these be optional?
+  mainSection?: {
+    header: String;
+    content: String;
+  };
+  optionalSections?: {};
+}
+
 export interface deleteObject {
   acknowledged: Boolean;
   deletedCount: Number;
