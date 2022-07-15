@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { CharacterInfo } from '../../../types';
 import './scss/CharacterCard.scss';
 
@@ -9,8 +10,15 @@ type CharacterCardProps = {
 const CharacterCard: FunctionComponent<CharacterCardProps> = ({
   character,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="char-card">
+    <div
+      className="char-card"
+      onClick={() => {
+        navigate(`/characters/${character._id}`);
+      }}
+    >
       <div className="char-pic__container">
         <img
           className="char-pic"

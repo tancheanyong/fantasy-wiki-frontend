@@ -1,12 +1,12 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.scss';
-import Characters from './components/characters/Characters';
+import Characters from './components/characters/CharactersPage';
 import Worldbuilding from './components/Worldbuilding';
 import Home from './components/Home';
-import CharacterPage from './components/characters/CharacterPage';
 import CharacterCreation from './components/characters/CharacterCreation';
 import StoryBoard from './components/storyBoard/StoryBoard';
 import PageHeader from './components/PageHeader';
+import CharacterWiki from './components/characters/CharacterWiki';
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             path="/characters/character-creation"
             element={<CharacterCreation />}
           />
-          <Route path="/characters/:name" element={<CharacterPage />} />
+          <Route path="/characters/:id" element={<CharacterWiki />} />
           <Route path="/worldbuilding" element={<Worldbuilding />} />
           <Route path="/storyboard" element={<StoryBoard />} />
         </Routes>
