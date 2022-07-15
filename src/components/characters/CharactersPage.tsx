@@ -6,7 +6,7 @@ import CharacterCard from './CharacterCard';
 import { Button, Dialog } from '@blueprintjs/core';
 import CharacterCreationDialog from './CharacterCreationDialog';
 
-function Characters() {
+function CharactersPage() {
   const [characters, setCharacters] = useState<Array<CharacterInfo>>([]);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
@@ -52,4 +52,4 @@ function Characters() {
   );
 }
 
-export default Characters;
+export default CharactersPage;

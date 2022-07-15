@@ -2,15 +2,16 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CharacterInfo, deleteObject } from '../../../types';
 
-function CharacterPage() {
+function CharacterWiki() {
   const params = useParams();
-  const { name } = params;
+  const { id } = params;
   const [characterInfo, setCharacterInfo] = useState<CharacterInfo>();
   const [deleteStatus, setDeleteStatus] = useState<string>();
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/characters/${name}`)
+    console.log(id);
+    fetch(`http://localhost:8000/characters/wiki/${id}`)
       .then((res) => res.json())
       .then((data: CharacterInfo) => setCharacterInfo(data));
   }, []);
@@ -22,7 +23,7 @@ function CharacterPage() {
   };
 
   const deleteCharacter = () => {
-    fetch(`http://localhost:8000/characters/${name}`, {
+    fetch(`http://localhost:8000/characters/${id}`, {
       method: 'DELETE',
       headers: {
         'Content-type': 'application/json',
@@ -55,4 +56,4 @@ function CharacterPage() {
   );
 }
 
-export default CharacterPage;
+export default CharacterWiki;
