@@ -16,9 +16,7 @@ function CharacterWiki() {
   }, []);
 
   const handleNavigation = () => {
-    setTimeout(() => {
-      navigate('/characters');
-    }, 2000);
+    navigate('/characters');
   };
 
   const deleteCharacter = () => {
@@ -28,20 +26,7 @@ function CharacterWiki() {
         'Content-type': 'application/json',
       },
       body: JSON.stringify({ _id: characterInfo?.characterId }),
-    })
-      .then((res) => res.json())
-      .then((result: deleteObject) => {
-        if (result.deletedCount) {
-          setDeleteStatus(
-            `${characterInfo?.characterInfo.name} is successfully deleted.`
-          );
-        } else {
-          setDeleteStatus(
-            `${characterInfo?.characterInfo.name} has already been deleted`
-          );
-        }
-      })
-      .then(() => handleNavigation());
+    }).then(() => handleNavigation());
   };
 
   return (
