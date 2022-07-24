@@ -3,11 +3,26 @@ export interface characterNames {
   name: string;
 }
 
-export interface characterInfo {
+export interface CharacterInfo {
   _id: string;
   name: string;
   age: Number;
   description: string;
+}
+
+export interface CharacterWikiType {
+  characterId: String;
+  characterInfo: {
+    name: String;
+    age: Number;
+    description: String;
+  };
+  // TODO: Should these be optional?
+  mainSection?: {
+    header: String;
+    content: String;
+  };
+  optionalSections?: {};
 }
 
 export interface deleteObject {

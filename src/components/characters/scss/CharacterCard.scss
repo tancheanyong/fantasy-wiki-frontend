@@ -1,0 +1,31 @@
+@import '../../../ColorPalette.scss';
+
+.char-card {
+  text-align: center;
+  border: 2px solid $dark-brown3;
+  border-radius: 10px;
+  height: 260px;
+  width: 200px;
+  background-color: $dark-brown5;
+  .char-pic__container {
+    height: 60%;
+    .char-pic {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover;
+    }
+  }
+  .char-name {
+    font-weight: 500;
+    color: $dark-brown1;
+    letter-spacing: 0.16em;
+    font-size: 16px;
+    height: 10%;
+    margin-bottom: 0;
+  }
+  .char-desc {
+    height: 30%;
+    color: $dark-brown2;
+    margin-bottom: 0;
+  }
+}

@@ -1,0 +1,27 @@
+@import '../../../ColorPalette.scss';
+
+.char-page {
+  background-color: $light-brown4;
+  height: calc(100% - 76px);
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .page-title {
+      margin: 20px;
+    }
+    .btn--add-character {
+      background-color: $light-brown2;
+      padding: 6px 12px;
+      border-radius: 12px;
+      margin: 20px;
+    }
+  }
+
+  .character-roaster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 20px 5%;
+  }
+}
