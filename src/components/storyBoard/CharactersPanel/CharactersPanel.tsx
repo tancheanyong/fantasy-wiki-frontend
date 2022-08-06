@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CharacterInfo } from '../../../types';
+import { CharacterInfo } from '../../../../types';
 import CharacterSectionItem from './CharacterSectionItem';
 import './CharactersPanel.scss';
 

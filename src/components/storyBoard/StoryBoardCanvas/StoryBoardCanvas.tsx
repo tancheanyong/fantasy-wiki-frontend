@@ -14,7 +14,7 @@ import EventNode from './Nodes/EventNode';
 import './StoryBoardCanvas.scss';
 import nextId from 'react-id-generator';
 import { Button } from '@blueprintjs/core';
-import { EventCardInfo } from '../../../types';
+import { EventCardInfo } from '../../../../types';
 
 function StoryBoardCanvas() {
   const initialElements = [
