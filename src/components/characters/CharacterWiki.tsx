@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { CharacterInfo, CharacterWikiType, deleteObject } from '../../../types';
+import { CharacterWikiType } from '../../../types';
 
 function CharacterWiki() {
   const params = useParams();
@@ -12,7 +12,9 @@ function CharacterWiki() {
   useEffect(() => {
     fetch(`http://localhost:8000/characters/wiki/${id}`)
       .then((res) => res.json())
-      .then((data: CharacterWikiType) => setCharacterInfo(data));
+      .then((data: CharacterWikiType) => {
+        setCharacterInfo(data);
+      });
   }, []);
 
   const handleNavigation = () => {
