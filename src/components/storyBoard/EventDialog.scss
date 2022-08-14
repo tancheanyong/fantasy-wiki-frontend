@@ -1,0 +1,21 @@
+.event-dialog {
+  padding: 12px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .event-title {
+      font-weight: bold;
+      font-size: large;
+    }
+  }
+  .body {
+    padding: 12px 0;
+    .event-title {
+    }
+    .event-desc {
+      resize: none;
+      height: 80px;
+    }
+  }
+}
