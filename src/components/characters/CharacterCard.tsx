@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { CharacterInfo } from '../../../types';
+import { CharacterInfo } from '../../types';
 import './scss/CharacterCard.scss';
 
 type CharacterCardProps = {

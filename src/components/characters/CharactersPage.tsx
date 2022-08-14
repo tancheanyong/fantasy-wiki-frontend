@@ -4,7 +4,7 @@ import './scss/Characters.scss';
 import CharacterCard from './CharacterCard';
 import { Button, Dialog } from '@blueprintjs/core';
 import CharacterCreationDialog from './CharacterCreationDialog';
-import { CharacterInfo } from '../../../types';
+import { CharacterInfo } from '../../types';
 
 function CharactersPage() {
   const [characters, setCharacters] = useState<Array<CharacterInfo>>([]);

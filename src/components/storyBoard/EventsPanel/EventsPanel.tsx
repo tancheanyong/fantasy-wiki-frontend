@@ -3,7 +3,7 @@ import { DragEvent, useContext, useState } from 'react';
 import EventCard from './EventCard';
 import './EventsPanel.scss';
 import nextId from 'react-id-generator';
-import { EventCardInfo } from '../../../../types';
+import { EventCardInfo } from '../../../types';
 import { StoryBoardContext } from '../StoryBoard';
 
 const EventsPanel = () => {

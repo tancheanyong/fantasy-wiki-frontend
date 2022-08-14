@@ -1,6 +1,6 @@
 import React, { DragEvent, FunctionComponent } from 'react';
 import { Icon, IconSize } from '@blueprintjs/core';
-import { CharacterInfo } from '../../../../types';
+import { CharacterInfo } from '../../../types';
 
 type CharacterItemProps = {
   character: CharacterInfo;
