@@ -15,13 +15,14 @@ import './StoryBoardCanvas.scss';
 import nextId from 'react-id-generator';
 import { Button } from '@blueprintjs/core';
 import { EventCardInfo } from '../../../types';
+import { EventNodeData } from './types';
 
 function StoryBoardCanvas() {
-  const initialElements = [
+  const initialElements: Node<EventNodeData>[] = [
     {
       id: 'firstEvent',
       type: 'event',
-      data: { label: 'First Event' },
+      data: { title: 'First Event' },
       position: { x: 500, y: 150 },
     },
   ];
@@ -55,11 +56,11 @@ function StoryBoardCanvas() {
         x: event.clientX,
         y: event.clientY,
       });
-      const newNode: any = {
+      const newNode: Node<EventNodeData> = {
         id: nodeId,
         type: 'event',
         position,
-        data: { label: nodeId },
+        data: { title: nodeId },
       };
 
       setElements((es) => es.concat(newNode));
