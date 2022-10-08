@@ -10,14 +10,23 @@ type EventNodeProps = {
 
 const EventNode: FunctionComponent<EventNodeProps> = ({ data }) => {
   const [showEditBtn, setShowEditBtn] = useState<boolean>(false);
+  const [expandNode, setExpandNode] = useState<boolean>(false);
+
+  const onMouseOver = () => {
+    setShowEditBtn(true);
+    setExpandNode(true);
+  };
+
+  const onMouseLeave = () => {
+    setShowEditBtn(false);
+    setExpandNode(false);
+  };
 
   return (
     <div
       className="event-node"
-      onMouseOver={() => setShowEditBtn(true)}
-      onMouseLeave={() => {
-        setShowEditBtn(false);
-      }}
+      onMouseOver={onMouseOver}
+      onMouseLeave={onMouseLeave}
     >
       <CustomBtn
         innerElement={'hi'}
@@ -26,7 +35,12 @@ const EventNode: FunctionComponent<EventNodeProps> = ({ data }) => {
         minimal
       />
       <p className="header">{data.title}</p>
-      <div className="characters"></div>
+      {expandNode ? (
+        <div className="expanded-section">
+          <div className="event-desc">{data.description}</div>
+          <div className="characters">{data.characters}</div>
+        </div>
+      ) : null}
     </div>
   );
 };

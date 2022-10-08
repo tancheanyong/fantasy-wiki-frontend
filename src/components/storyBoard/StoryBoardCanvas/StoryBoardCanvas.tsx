@@ -22,7 +22,10 @@ function StoryBoardCanvas() {
     {
       id: 'firstEvent',
       type: 'event',
-      data: { title: 'First Event' },
+      data: {
+        title: 'First Event',
+        description: 'This is the first event ever',
+      },
       position: { x: 500, y: 150 },
     },
   ];
