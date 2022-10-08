@@ -19,7 +19,12 @@ const EventNode: FunctionComponent<EventNodeProps> = ({ data }) => {
         setShowEditBtn(false);
       }}
     >
-      <CustomBtn innerElement={'hi'} showBtn={showEditBtn} />
+      <CustomBtn
+        innerElement={'hi'}
+        showBtn={showEditBtn}
+        customClass="edit-btn"
+        minimal
+      />
       <p className="header">{data.title}</p>
       <div className="characters"></div>
     </div>

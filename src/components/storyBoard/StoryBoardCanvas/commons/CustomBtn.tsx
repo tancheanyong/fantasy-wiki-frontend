@@ -5,12 +5,14 @@ import './CustomBtn.scss';
 type CustomBtnProps = {
   innerElement: any;
   showBtn?: boolean;
+  minimal?: boolean;
   customClass?: string;
 };
 
 const CustomBtn: FC<CustomBtnProps> = ({
   innerElement,
   showBtn,
+  minimal,
   customClass,
 }) => {
   return (
@@ -24,6 +26,7 @@ const CustomBtn: FC<CustomBtnProps> = ({
         ' ' +
         customClass
       }
+      minimal={minimal}
     >
       {innerElement}
     </Button>
