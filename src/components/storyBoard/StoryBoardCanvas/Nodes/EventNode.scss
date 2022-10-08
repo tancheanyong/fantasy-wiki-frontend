@@ -9,6 +9,11 @@
   background-color: $light-brown2;
   border-radius: 6px;
   padding: 6px;
+  position: relative;
+  .edit-btn {
+    position: absolute;
+    right: 6px;
+  }
   .header {
     text-align: center;
     font-size: 18px;
